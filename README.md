@@ -44,6 +44,10 @@ void testCreateAccountOp() {
     strcpy(publicKey, "019139E6F6625C403132C9B8DF75844CDA34221327E3996385FC7A693966CB7E57");
     hex2byte_arr(publicKey, 66, publicKeyData, 33);
 
+    strcpy(signature, "D01ECBBB0498BD881A37E13C02BAA8D301B3DC137FE22ABA46D86556326DCB0ACEB608D4121AC127DE4AF2878DF1CA7E6DAE236A4CA257E5D00562FFCA75A80A");
+    hex2byte_arr(signature, 128, signedTx.signature.bytes, 64);
+    hex2byte_arr(publicKey, 64, signedTx.public_key.bytes, 32);
+    
     envelopeXdrBase64(publicKeyData, &signTx, &signedTx, &createAccountOp, NULL, rawTx);
     printf("raw Tx: %s\n", rawTx);
 }
@@ -94,6 +98,10 @@ void testPaymentOp() {
 
     strcpy(publicKey, "019139E6F6625C403132C9B8DF75844CDA34221327E3996385FC7A693966CB7E57");
     hex2byte_arr(publicKey, 66, publicKeyData, 33);
+    
+    strcpy(signature, "D01ECBBB0498BD881A37E13C02BAA8D301B3DC137FE22ABA46D86556326DCB0ACEB608D4121AC127DE4AF2878DF1CA7E6DAE236A4CA257E5D00562FFCA75A80A");
+    hex2byte_arr(signature, 128, signedTx.signature.bytes, 64);
+    hex2byte_arr(publicKey, 64, signedTx.public_key.bytes, 32);
 
     envelopeXdrBase64(publicKeyData, &signTx, &signedTx, NULL, &paymentOp, rawTx);
     printf("raw Tx: %s\n", rawTx);

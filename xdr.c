@@ -77,7 +77,7 @@ void envelopeXdrBase64(const uint8_t *public_key, const StellarSignTx *signTx, c
     }
     writeInt(1, new_bytes); // signature size
 
-    write(signedTx->public_key.bytes, 27, 4, new_bytes); // last 4 bytes of the public key, used as a hint
+    write(signedTx->public_key.bytes, 28, 4, new_bytes); // last 4 bytes of the public key, used as a hint
     writeInt(signedTx->signature.size, new_bytes); // signature size
     write(signedTx->signature.bytes, 0, 64, new_bytes); // public key
 

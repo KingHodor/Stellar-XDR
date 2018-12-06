@@ -117,4 +117,4 @@ payment raw Tx:        AAAAAJE55vZiXEAxMsm433WETNo0IhMn45ljhfx6aTlmy35XAAAAZAAAA
 
 ## Getting help
 
-Please contact ahmet@evercoin.com
+Please contact sfa.alptekin@gmail.com
